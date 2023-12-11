@@ -1,0 +1,96 @@
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+			<div class="signup">
+				<form method="post" action="/api/register">
+					<label for="chk" aria-hidden="true">Sign up</label>	
+
+					<input type="text" id="CIN" name="CIN" class="form-control" placeholder="CIN" ng-reflect-model="X" 
+							minlength="8" maxlength="8" [(ngModel)]="formData.CIN" #CIN="ngModel" required pattern="[0-9]*">
+						<div *ngIf="CIN.touched && !CIN.valid" role="alert" class="alert alert-danger">
+							<div *ngIf="CIN.errors?.['required']"> *
+								Champ obligatoire
+							</div>
+							<div *ngIf="CIN.errors?.['pattern']">
+								Ce champ contient seulement des nombres
+							</div>
+							<div *ngIf="CIN.errors?.['minlength']">
+								Ce champ doit contenir 8 chiffres
+							</div>
+						</div>
+
+					<input id="nom" class="form-control" type="text" name="nom" minlength="3" maxlength="20" [(ngModel)]="formData.nom" #nom="ngModel" required pattern="[a-zA-Z]*" placeholder="nom" required>
+					<div class="alert alert-danger" role="alert" *ngIf="nom.touched && !nom.valid">
+						<div *ngIf="nom.errors?.['required']"> *
+							Champ obligatoire
+						</div>
+						<div *ngIf="nom.errors?.['pattern']">
+							Ce champ contient seulement des lettres
+						</div>
+						<div *ngIf="nom.errors?.['maxlength']">
+							Ce champ doit contenir 20 maximum chiffres
+						</div>
+						<div *ngIf="nom.errors?.['minlength']">
+							Ce champ doit contenir 3 minimum chiffres
+						</div>
+					  </div>
+
+
+					<input id="email" class="form-control" type="email" name="email" placeholder="email" minlength="13" maxlength="20" [(ngModel)]="formData.email" #email="ngModel" placeholder="email" required pattern="[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com)">
+					<div class="alert alert-danger" role="alert" *ngIf="email.touched && !email.valid">
+						<div *ngIf="email.errors?.['required']">
+							Champ obligatoire
+						</div>
+						<div *ngIf="email.errors?.['pattern']">
+							Email incorrect
+						</div>
+						<div *ngIf="email.errors?.['minimum']">
+							Ce champ doit contenir minimum 13 chiffres et/ou lettres
+						</div>
+						<div *ngIf="email.errors?.['maxlength']">
+							Ce champ doit contenir maximum 20 chiffres et/ou lettres
+						</div>
+					</div>
+
+					<input id="password" class="form-control" type="password" name="password" placeholder="Password" required="" ngModel required="" [(ngModel)]="formData.password"  #password="ngModel">
+					<div class="alert alert-danger" role="alert" *ngIf="password.touched && !password.valid">
+						<div *ngIf="password.errors?.['required']">
+							Champ obligatoire
+						</div>
+					  </div>
+					<button (click)="onSubmit()" type="submit">Sign up</button>
+				</form>
+			</div>
+
+			<div class="login">
+				<form>
+					<label for="chk" aria-hidden="true">Login</label>
+					
+					<input class="form-control" type="email" name="email" placeholder="email" minlength="13" maxlength="20" [(ngModel)]="email.name" #email="ngModel" placeholder="email" required pattern="[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com)">
+					<div class="alert alert-danger" role="alert" *ngIf="email.touched && !email.valid">
+						<div *ngIf="email.errors?.['required']">
+							Champ obligatoire
+						</div>
+						<div *ngIf="email.errors?.['pattern']">
+							Email incorrect
+						</div>
+						<div *ngIf="email.errors?.['minimum']">
+							Ce champ doit contenir minimum 13 chiffres et/ou lettres
+						</div>
+						<div *ngIf="email.errors?.['maxlength']">
+							Ce champ doit contenir maximum 20 chiffres et/ou lettres
+						</div>
+					</div>
+
+					<input class="form-control" type="password" name="pswd" placeholder="Password" required="" ngModel required="" #password="ngModel">
+					<div class="alert alert-danger" role="alert" *ngIf="password.touched && !password.valid">
+						<div *ngIf="password.errors?.['required']">
+							Champ obligatoire
+						</div>
+					</div>
+					  
+					<button>Login</button>
+				</form>
+			</div>
+	</div>
+</body>

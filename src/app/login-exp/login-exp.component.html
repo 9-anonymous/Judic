@@ -1,0 +1,161 @@
+
+<body>
+	<div class="section">
+			<div class="row full-height justify-content-center">
+				<div class="col-12 text-center align-self-center">
+					<div class="section text-center">
+						<h6 class="mb-0 pb-3"><span class="TypeForm"> Log In </span><span class="TypeForm">Sign Up</span></h6>
+			          	<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+			          	<label for="reg-log"></label>
+						<div class="card-3d-wrap mx-auto">
+							<div class="card-3d-wrapper">
+								<div class="card-front">
+									<div class="center-wrap">
+										<div class="section text-center">
+										
+                                            <div class="login-box">
+                                                <h2>Login</h2>
+                                                <form>
+                                                  <div class="user-box">
+                                                    <input class="form-control" type="email" name="  " placeholder="email" minlength="13" maxlength="20" [(ngModel)]="email.name" #email="ngModel" placeholder="email" required pattern="[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com)">
+                                                      <div class="alert alert-danger" role="alert" *ngIf="email.touched && !email.valid">
+                                                        <div *ngIf="email.errors?.['required']">
+                                                          Champ obligatoire
+                                                        </div>
+                                                        <div *ngIf="email.errors?.['pattern']">
+                                                          Email incorrect
+                                                        </div>
+                                                        <div *ngIf="email.errors?.['minimum']">
+                                                          Ce champ doit contenir minimum 13 chiffres et/ou lettres
+                                                        </div>
+                                                        <div *ngIf="email.errors?.['maxlength']">
+                                                          Ce champ doit contenir maximum 20 chiffres et/ou lettres
+                                                        </div>
+                                                      </div>
+                                                    <label>Username</label>
+                                                  </div>
+                                                  <div class="user-box">
+                                                    <input class="form-control" type="password" name=" " placeholder="Password" required="" ngModel required="" #password="ngModel">
+                                                      <div class="alert alert-danger" role="alert" *ngIf="password.touched && !password.valid">
+                                                        <div *ngIf="password.errors?.['required']">
+                                                          Champ obligatoire
+                                                        </div>
+                                                        </div>
+                                                    <label>Password</label>
+                                                  </div>
+                                                  <a href="#">
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    Submit
+                                                  </a>
+                                                </form>
+                                              </div>
+                                            
+                                        </div>
+			      					</div>
+			      				</div>
+								<div class="card-back">
+									<div class="center-wrap">
+										<div class="section text-center">
+                                            <div class="login-box">
+                                                <h2>Sign up</h2>
+                                                <form>
+                                                 
+                                                  
+                                                  <div style="display: flex;">
+  
+<div style="margin-right: 10px;width: 40%;" class="user-box">
+      <input type="text" name="CIN" class="form-controlS" ng-reflect-model="X" minlength="9" maxlength="9"
+       [(ngModel)]="formData.CIN" #CIN="ngModel" required pattern="[0-9]*">
+
+<div *ngIf="CIN.touched && CIN.errors" role="alert" class="EmailErrors">
+  <div *ngIf="CIN.errors?.['required']">
+    Champ obligatoire
+  </div>
+  <div *ngIf="CIN.errors?.['pattern']">
+    Ce champ doit contenir seulement des nombres
+  </div>
+  <div *ngIf="CIN.errors?.['minlength']">
+    Ce champ doit contenir 9 chiffres
+  </div> 
+</div> 
+  <label>ID</label>
+</div>
+                                                    <div style="width: 60%;" class="user-box">
+                                                      <input class="form-controlS" type="text" name="Nom" minlength="3" maxlength="15" [(ngModel)]="formData.nom" #nom="ngModel" required pattern="[a-zA-Z]*">
+                                                      <div class="alert alert-danger" role="alert" *ngIf="nom.touched && !nom.valid">
+                                                        <div *ngIf="nom.errors?.['required']">
+                                                          Champ obligatoire
+                                                        </div>
+                                                        <div *ngIf="nom.errors?.['pattern']">
+                                                          Nom incorrect
+                                                        </div>
+                                                        <div *ngIf="nom.errors?.['minimum']">
+                                                          Ce champ doit contenir minimum 3 chiffres et/ou lettres
+                                                        </div>
+                                                        <div *ngIf="nom.errors?.['maxlength']">
+                                                          Ce champ doit contenir maximum 15 chiffres et/ou lettres
+                                                        </div>
+                                                      </div>
+                                                    <label>Nom</label>
+                                                  </div>
+                                                 
+                                        </div> 
+                                                  <div  class="user-box">
+                                                    <input class="form-control" type="email" name="Email"minlength="13" maxlength="20" [(ngModel)]="formData.email" #Email="ngModel" placeholder="email" required pattern="[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com)">
+                                                    <div class="alert alert-danger" role="alert" *ngIf="Email.touched && !Email.valid">
+                                                      <div *ngIf="Email.errors?.['required']">
+                                                        Champ obligatoire
+                                                      </div>
+                                                      <div *ngIf="Email.errors?.['pattern']">
+                                                        Email incorrect
+                                                      </div>
+                                                      <div *ngIf="Email.errors?.['minimum']">
+                                                        Ce champ doit contenir minimum 13 chiffres et/ou lettres
+                                                      </div>
+                                                      <div *ngIf="Email.errors?.['maxlength']">
+                                                        Ce champ doit contenir maximum 20 chiffres et/ou lettres
+                                                      </div>
+                                                    </div>
+                                                    <label>Email</label>
+                                                  </div>
+                                                  <div class="user-box">
+                                                    <input class="form-control" type="password" name="password" ngModel [(ngModel)]="formData.password" required="" #Password="ngModel">
+                                                    <div class="alert alert-danger" role="alert" *ngIf="Password.touched && !Password.valid">
+                                                      <div *ngIf="Password.errors?.['required']">
+                                                        Champ obligatoire
+                                                      </div>
+                                                      </div> 
+                                                    <label>Password</label>
+                                                  </div>
+                                                  <a href="#">
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    Submit
+                                                  </a>
+                                                </form>
+                                              </div>
+				      					</div>
+			      					</div>
+			      				</div>
+			      			</div>
+			      		</div>
+			      	</div>
+		      	</div>
+	      	</div>
+	    </div>
+
+</body>
+
+
+
+
+
+
+
+<div class="bg2">
+</div>
