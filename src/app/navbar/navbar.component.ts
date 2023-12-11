@@ -34,6 +34,7 @@ export class NavbarComponent {
   }
 
 
+  
   NextProgress(){
     this.showForm=!this.showForm;
     if(this.progressWidth==='0%'){
